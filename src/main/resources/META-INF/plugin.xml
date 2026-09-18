@@ -1,0 +1,35 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.anaphan.hiddengitignore</id>
+
+    <!-- Public plugin name should be written in Title Case.
+     Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>Hidden Gitignore</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor>anaphan</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+        Tool for working with git's hidden ignore file
+        ]]></description>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="HiddenGitignore.Group"
+                           displayType="BALLOON"/>
+    </extensions>
+
+    <actions>
+        <group id="com.anaphan.hiddengitignore.HiddenGitgnoreGroup" text="Hidden Gitignore"
+               description="Tool for working with git's hidden ignore file">
+            <action id="com.anaphan.hiddengitignore.OpenLocalGitignoreAction"
+                    class="com.anaphan.hiddengitignore.OpenLocalGitignoreAction" text="Open Local Gitignore"
+                    description="Opens the local project&#39;s exclusion file"/>
+
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </group>
+
+    </actions>
+</idea-plugin>
